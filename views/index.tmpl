@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Hi!</h1>
+    <ul>
+      {%each items|sort-by 'name' as item idx %}
+      {%partial partials/list-item . %}
+      {%endeach%}
+    </ul>
+  </body>
+</html>
