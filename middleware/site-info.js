@@ -8,7 +8,6 @@ var contentService = require( '../services/content-service' );
 module.exports = function(req, res, next) {
   contentService.siteInfo().then(function( info ) {
     // Add site info as a local
-    console.log('setting res.locals');
     res.locals.site = {
       name: info.name,
       description: info.description

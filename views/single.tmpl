@@ -10,9 +10,21 @@
 
     <link href="/css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="single post">
     <div class="container">
       {%partial partials/global-header . %}
+
+      <div class="row">
+        <div class="col-md-12">
+          {%-- Commented out pending Combyne support for filtered partial contexts --%}
+          {%-- {%partial partials/page-banner post.featured_image|get-image %} --%}
+          <img class="banner"
+            src="{{post.featured_image|get-image 'large' 'url'}}"
+            width="{{post.featured_image|get-image 'large' 'width'}}"
+            height="{{post.featured_image|get-image 'large' 'height'}}" />
+
+        </div>
+      </div>
 
       <div class="row">
         <div class="col-md-12">
