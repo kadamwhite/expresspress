@@ -29,3 +29,6 @@ node_modules
 
 # Rendered stylesheets
 public/css/
+
+# Application configuration
+config.yml

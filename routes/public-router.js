@@ -6,10 +6,10 @@ var router = express.Router();
 // Public Routes
 // =============
 
-router.use( '/', require( './index' ) );
+router.get( '/', require( './index' ) );
 // router.use( '/search', require( './search' ) );
 // router.use( '/:year/:month', require( './archive-year-month' ) );
-// router.use( '/:year/:month/:slug', require( './single' ) );
+router.get( '/:year/:month/:slug', require( './single' ) );
 // router.use( '/tags/', require( './tags' ) );
 // router.use( '/categories/', require( './categories' ) );
 
