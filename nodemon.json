@@ -1,0 +1,10 @@
+{
+  "verbose": false,
+  "watch": [
+    "bin",
+    "routes",
+    "views/filters",
+    "app.js"
+  ],
+  "ext": "js"
+}
