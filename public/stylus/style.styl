@@ -1,7 +1,56 @@
+// 3rd-party dependencies
+// --------------------------------------------------------
 @import 'lib/bootstrap.min.css';
 @import 'lib/bootstrap-theme.min.css';
 
+// 1st-party dependencies, helpers & utilities
+// --------------------------------------------------------
+@import 'mixins';
+
+// Font and Image URLs
+// --------------------------------------------------------
+$dark-bg-texture = '/images/dark-sharp-edges.png';
+
+// ========================================================
+// Global styles
+// --------------------------------------------------------
+
+
+// See http://static.incompl.com/awful
+* {
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+$frame-size-small = 10px;
+$frame-size-large = 20px;
+
+html {
+  height: '-webkit-calc( 100% - %s )' % $frame-size-small;
+  height: 'calc( 100% - %s )' % $frame-size-small;
+  margin: $frame-size-small $frame-size-small 0;
+  background: url($dark-bg-texture);
+
+  +respond-above($sm-screen) {
+    height: '-webkit-calc( 100% - %s )' % $frame-size-large;
+    height: 'calc( 100% - %s )' % $frame-size-large;
+    margin: $frame-size-large $frame-size-large 0;
+  }
+}
+
 body {
+  height: '-webkit-calc( 100% - %s )' % $frame-size-small;
+  height: 'calc( 100% - %s )' % $frame-size-small;
+  padding: $frame-size-small;
+  +respond-above($sm-screen) {
+    height: '-webkit-calc( 100% - %s )' % $frame-size-large;
+    height: 'calc( 100% - %s )' % $frame-size-large;
+    padding: $frame-size-large;
+  }
+  overflow-y: scroll;
+
+  // Non-layout top-level rules
+  background-color: white;
   word-wrap: break-word;
 }
 

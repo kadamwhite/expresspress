@@ -1,0 +1,23 @@
+$xs-screen = 320px;
+$sm-screen = 480px;
+$md-screen = 768px;
+$lg-screen = 992px;
+
+respond-below($width)
+  media = 'all and (max-width: %s)' % $width
+  @media media
+    {block}
+
+
+respond-above($width)
+  media = 'all and (min-width: %s)' % $width
+  @media media
+    {block}
+
+respond-between($min-width, $max-width) {
+  $max-width = $max-width - 1;
+  media = 'all and (min-width: %s) and (max-width: %s)' % ($min-width $max-width);
+  @media media {
+    {block}
+  }
+}
