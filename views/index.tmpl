@@ -10,14 +10,52 @@
 
     <link href="/css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="archive home">
     <div class="container">
+      {%partial partials/global-header . %}
+
       <div class="row">
         <div class="col-md-12">
-          <h1>Context</h1>
-          <pre>{{ .|stringify }}</pre>
-        </div>
+          <div class="row">
+          {%each posts as post idx%}
+
+            {%--
+            Every two items, make a new row
+            --%}
+            {%if idx|every 2 %}
+          </div>
+          <div class="row">
+            {%endif%}
+
+            {%--
+            First four posts are full-width: following posts are 1/2 width.
+            All posts are 1/2 width when paging through past post archives.
+            --%}
+            {%if pages.current == 1 %}
+            <div class="post {%if idx < 4 %}col-sm-12{%else%}col-sm-6{%endif%}">
+            {%else%}
+            <div class="post col-sm-6">
+            {%endif%}
+              <h2>
+                <a href="/{{post.date|get-year}}/{{post.date|get-month}}/{{post.slug}}">
+                  {{{post.title}}}
+                </a>
+              </h2>
+              <p class="text-muted">by {{post.author.name}}</p>
+              {%if post.excerpt%}
+              <p>{{{post.excerpt}}}</p>
+              {%endif%}
+            </div>{%-- .post --%}
+
+          {%endeach%}
+          </div>{%-- .row --%}
+          <div class="row">
+            <div class="col-md-12">
+              {%partial partials/pagination . %}
+            </div>
+          </div>{%-- .row --%}
+        </div>{%-- .col-md-12 --%}
       </div>
-    </div>
+    </div>{%-- .container --%}
   </body>
 </html>

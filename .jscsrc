@@ -39,7 +39,9 @@
     "do",
     "switch",
     "return",
-    "try",
+    "try"
+  ],
+  "disallowSpaceAfterKeywords": [
     "catch"
   ],
   "requireSpacesInsideObjectBrackets": "all",

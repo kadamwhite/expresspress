@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{{ title }}</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      {%partial partials/global-header . %}
+
+      <div class="row">
+        <div class="col-md-12">
+          <h1>{{{post.title}}}</h1>
+
+          <p class="text-muted">by {{post.author.name}}</p>
+
+          <div class="content">
+            {{{post.content}}}
+          </div>
+        </div>
+      </div>{%-- .row --%}
+    </div>
+  </body>
+</html>

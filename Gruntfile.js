@@ -8,8 +8,11 @@ module.exports = function( grunt ) {
     grunt: [ 'Gruntfile.js' ],
     lib: [
       'app.js',
+      'middleware/**/*.js',
       'public/**/*.js',
+      '!public/js/lib/**/*.js',
       'routes/**/*.js',
+      'services/**/*.js',
       'views/filters/**/*.js'
     ],
     tests: [ 'tests/**/*.js' ]

@@ -2,9 +2,11 @@
   "verbose": false,
   "watch": [
     "bin",
+    "middleware",
     "routes",
-    "views/filters",
+    "services",
+    "views",
     "app.js"
   ],
-  "ext": "js"
+  "ext": "js,tmpl"
 }

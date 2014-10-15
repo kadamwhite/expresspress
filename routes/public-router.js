@@ -2,11 +2,16 @@
 
 var express = require( 'express' );
 var router = express.Router();
+var siteInfoMiddleware = require( '../middleware/site-info' );
+
+// Set global site info on all routes
+router.use( siteInfoMiddleware );
 
 // Public Routes
 // =============
 
 router.get( '/', require( './index' ) );
+router.get( '/page/:page', require( './index' ) );
 // router.use( '/search', require( './search' ) );
 // router.use( '/:year/:month', require( './archive-year-month' ) );
 router.get( '/:year/:month/:slug', require( './single' ) );

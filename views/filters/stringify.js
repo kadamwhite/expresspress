@@ -5,6 +5,6 @@ var stripColorCodes = require( 'stripcolorcodes' );
 
 function stringifyFilter( values ) {
   return stripColorCodes( format( values ) );
-};
+}
 
 module.exports = stringifyFilter;

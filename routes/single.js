@@ -2,27 +2,22 @@
 
 var RSVP = require( 'rsvp' );
 var _ = require( 'lodash' );
-var express = require( 'express' );
-var router = express.Router();
 var wp = require( '../services/wp' );
+var pageTitle = require( '../services/page-title' );
 
 function getSinglePost( req, res, next ) {
-  console.log(req.params);
-
-  var request = wp.posts().filter({
+  var post = wp.posts().filter({
     monthnum: req.params.month,
     year: req.params.year,
     name: req.params.slug
-  });
-
-  console.log(request._renderURI());
-
-  var post = request.then(function( posts ) {
+  }).then(function( posts ) {
     return _.first( posts );
   });
 
-  return RSVP.hash({
-    title: 'Post',
+  RSVP.hash({
+    title: post.then(function( post ) {
+      return pageTitle( post && post.title );
+    }),
     post: post
   }).then(function( context ) {
     if ( ! context.post ) {
@@ -30,9 +25,7 @@ function getSinglePost( req, res, next ) {
       return next();
     }
 
-    context.title = context.post.title;
-
-    res.render( 'index', context );
+    res.render( 'single', context );
   }).catch( next );
 }
 

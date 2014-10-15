@@ -1,0 +1,21 @@
+{%if posts._paging %}
+<hr>
+<ul class="pager">
+  {%if posts._paging.prev %}
+  <li class="previous">
+    <a href="{{archiveBase}}/page/{{pages.prev}}{%if search %}?query={{search}}{%endif%}">
+      Previous
+      <span class="hidden-sm">Posts</span>
+    </a>
+  </li>
+  {%endif%}
+  {%if posts._paging.next %}
+  <li class="next">
+    <a href="{{archiveBase}}/page/{{pages.next}}{%if search %}?query={{search}}{%endif%}">
+      Next
+      <span class="hidden-sm">Posts</span>
+    </a>
+  </li>
+  {%endif%}
+</ul>
+{%endif%}
