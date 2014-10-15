@@ -7,7 +7,11 @@ var router = express.Router();
 // =============
 
 router.use( '/', require( './index' ) );
-router.use( '/users', require( './users' ) );
+// router.use( '/search', require( './search' ) );
+// router.use( '/:year/:month', require( './archive-year-month' ) );
+// router.use( '/:year/:month/:slug', require( './single' ) );
+// router.use( '/tags/', require( './tags' ) );
+// router.use( '/categories/', require( './categories' ) );
 
 // catch 404 and forward to error handler
 router.use(function( req, res, next ) {

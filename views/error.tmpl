@@ -5,8 +5,12 @@
     <link href="/css/style.css" rel="stylesheet">
   </head>
   <body>
-    <p>{{message}}</p>
-    <h2>{{error.status}}</h2>
-    <pre>{{{error.stack}}}</pre>
+    <h1>
+      {{ message }}
+      <small>{{ error.status }}</small>
+    </h1>
+    {%if error.stack %}
+    <pre>{{{ error.stack }}}</pre>
+    {%endif%}
   </body>
 </html>
