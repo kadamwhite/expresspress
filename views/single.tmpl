@@ -1,42 +1,31 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ title }}</title>
+{%extend layouts/main as content%}
+<div class="container single post">
+  {%partial partials/global-header . %}
 
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%if post.featured_image|get-image 'large' 'url'%}
+  <div class="row">
+    <div class="col-md-12">
+      {%-- Commented out pending Combyne support for filtered partial contexts --%}
+      {%-- {%partial partials/page-banner post.featured_image|get-image %} --%}
+      <img class="banner"
+        src="{{post.featured_image|get-image 'large' 'url'}}"
+        width="{{post.featured_image|get-image 'large' 'width'}}"
+        height="{{post.featured_image|get-image 'large' 'height'}}" />
 
-    <link href="/css/style.css" rel="stylesheet">
-  </head>
-  <body class="single post">
-    <div class="container">
-      {%partial partials/global-header . %}
-
-      <div class="row">
-        <div class="col-md-12">
-          {%-- Commented out pending Combyne support for filtered partial contexts --%}
-          {%-- {%partial partials/page-banner post.featured_image|get-image %} --%}
-          <img class="banner"
-            src="{{post.featured_image|get-image 'large' 'url'}}"
-            width="{{post.featured_image|get-image 'large' 'width'}}"
-            height="{{post.featured_image|get-image 'large' 'height'}}" />
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <h1>{{{post.title}}}</h1>
-
-          <p class="text-muted">by {{post.author.name}}</p>
-
-          <div class="content">
-            {{{post.content}}}
-          </div>
-        </div>
-      </div>{%-- .row --%}
     </div>
-  </body>
-</html>
+  </div>
+  {%endif%}
+
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{{post.title}}}</h1>
+
+      <p class="text-muted">by {{post.author.name}}</p>
+
+      <div class="content">
+        {{{post.content}}}
+      </div>
+    </div>
+  </div>{%-- .row --%}
+</div>
+{%endextend%}
