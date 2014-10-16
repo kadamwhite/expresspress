@@ -3,7 +3,7 @@
   {%partial partials/global-header . %}
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8 col-md-push-4">
       <div class="row">
       {%each posts as post idx%}
 
@@ -42,7 +42,10 @@
           {%partial partials/pagination . %}
         </div>
       </div>{%-- .row --%}
-    </div>{%-- .col-md-12 --%}
+    </div>{%-- .col-md-8 --%}
+    <div id="sidebar" class="col-md-4 col-md-pull-8">
+      {%partial partials/sidebar sidebar %}
+    </div>{%-- .col-md-4 --%}
   </div>
 </div>{%-- .container --%}
 {%endextend%}

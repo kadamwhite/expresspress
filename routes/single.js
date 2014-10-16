@@ -3,6 +3,7 @@
 var RSVP = require( 'rsvp' );
 var _ = require( 'lodash' );
 var wp = require( '../services/wp' );
+var contentService = require( '../services/content-service' );
 var pageTitle = require( '../services/page-title' );
 
 function getSinglePost( req, res, next ) {
@@ -18,7 +19,9 @@ function getSinglePost( req, res, next ) {
     title: post.then(function( post ) {
       return pageTitle( post && post.title );
     }),
-    post: post
+    // Primary page content
+    post: post,
+    sidebar: contentService.getSidebarContent()
   }).then(function( context ) {
     if ( ! context.post ) {
       // No post found: 404

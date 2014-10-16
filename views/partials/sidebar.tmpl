@@ -1,0 +1,25 @@
+{%if categories %}
+<h3>Categories</h3>
+<ul>
+  {%each categories as category %}
+  <li>
+    <a href="/categories/{{category.slug}}">
+      {{{category.name}}}
+    </a>
+  </li>
+  {%endeach%}
+</ul>
+{%endif%}
+
+{%if tags %}
+<h3>Tags</h3>
+<ul>
+  {%each tags as tag %}
+  <li>
+    <a href="/tags/{{tag.slug}}">
+      {{{tag.name}}}
+    </a>
+  </li>
+  {%endeach%}
+</ul>
+{%endif%}
