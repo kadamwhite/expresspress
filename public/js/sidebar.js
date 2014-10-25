@@ -1,4 +1,5 @@
 (function( $ ) {
+  'use strict';
   var $moreTags = $( '#more-tags' );
   var $toggleTagsButton = $( '#toggle-all-tags' );
 

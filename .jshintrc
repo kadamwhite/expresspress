@@ -15,5 +15,6 @@
   "unused": "vars",
 
   "esnext": true,
+  "jquery": true,
   "node": true
 }
