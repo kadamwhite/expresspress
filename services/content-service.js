@@ -73,6 +73,27 @@ function sortedCategoriesCached() {
 }
 
 /**
+ * Get a specific tag (specified by slug) from the content cache
+ *
+ * The WP API doesn't currently support filtering taxonomy term collections,
+ * so we have to request all tags and filter them down if we want to get an
+ * individual term.
+ *
+ * To make this request more efficient, it uses the cached sortedTags promise.
+ *
+ * @method tagCached
+ * @param {String} slug The slug of a tag
+ * @return {Promise} A promise to the tag with the provided slug
+ */
+function tagCached( slug ) {
+  return sortedTagsCached().then(function( tags ) {
+    return _.findWhere( tags, {
+      slug: slug
+    });
+  });
+}
+
+/**
  * Get an alphabetized list of tags
  *
  * @method sortedTags
@@ -112,6 +133,7 @@ module.exports = {
   siteInfo: siteInfo,
   sortedCategories: sortedCategories,
   sortedCategoriesCached: sortedCategoriesCached,
+  tagCached: tagCached,
   sortedTags: sortedTags,
   sortedTagsCached: sortedTagsCached,
   getSidebarContent: getSidebarContent

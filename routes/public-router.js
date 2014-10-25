@@ -15,7 +15,7 @@ router.get( '/page/:page', require( './index' ) );
 // router.use( '/search', require( './search' ) );
 // router.use( '/:year/:month', require( './archive-year-month' ) );
 router.get( '/:year/:month/:slug', require( './single' ) );
-// router.use( '/tags/', require( './tags' ) );
+router.use( '/tags/:tag', require( './tag' ) );
 // router.use( '/categories/', require( './categories' ) );
 
 // catch 404 and forward to error handler
