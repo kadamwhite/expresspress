@@ -12,6 +12,7 @@ To run ExpressPress locally (which we recommend, as this is first and foremost a
 2. Install <a href="http://nodejs.org/">Node.js</a> (On OSX, we recommend installing Node via <a href="http://brew.sh/">Homebrew</a>)
 3. Inside the cloned repository directory, run `npm install` to install the dependencies
 4. Create a file called "config.yml" within the repository directory, with the following content (see the <a href="https://github.com/WP-API/WP-API">WP-API project</a> for instructions on installing and enabling the API plugin):
+
       ```yml
       wordpress:
         endpoint: 'http://www.your-api-enabled-wp-site.com/wp-json'
