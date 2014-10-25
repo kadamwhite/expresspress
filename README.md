@@ -19,7 +19,7 @@ To run ExpressPress locally (which we recommend, as this is first and foremost a
       ```
 5. From the command-line, run `npm start` to run the application
 6. Visit <a href="http://localhost:3000">http://localhost:3000</a> to view your site
-7. Alter the code, learn how it works, add new routes, & experiment!
+7. Alter the code, learn how it works, add new routes, & experiment! The server will automatically restart if you change any server-side files.
 
 ## Credits
 
