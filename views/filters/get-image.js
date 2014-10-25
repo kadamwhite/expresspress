@@ -31,7 +31,7 @@ function getImageSize( featuredImage, size, prop ) {
 
   if ( ! featuredImage ) {
     // Bad arguments: return empty object
-    return image;
+    return prop ? '' : image;
   }
 
   if ( ! size || ! _.contains( validSizes, size ) ) {
@@ -44,7 +44,7 @@ function getImageSize( featuredImage, size, prop ) {
 
   if ( ! meta || ! src ) {
     // Malformed: return empty object
-    return image;
+    return prop ? '' : image;
   }
 
   var sizes = meta.sizes;
