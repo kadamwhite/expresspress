@@ -6,7 +6,8 @@
     "routes",
     "services",
     "views",
-    "app.js"
+    "app.js",
+    "config.yml"
   ],
-  "ext": "js,tmpl"
+  "ext": "js,tmpl,yml"
 }
