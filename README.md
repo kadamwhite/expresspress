@@ -17,8 +17,9 @@ To run ExpressPress locally (which we recommend, as this is first and foremost a
         endpoint: 'http://www.your-api-enabled-wp-site.com/wp-json'
         cacheLimit: 3600000 # 1000ms * 60s * 60m = 1hr
       ```
-5. From the command-line, run `npm start` to run the application
-6. Visit <a href="http://localhost:3000">http://localhost:3000</a> to view your site
+5. From the command-line, run `npm start` to run the application.
+  - To run on a specific port, run `PORT=XXXX npm start`, where XXXX is a valid http port e.g. `8080`.
+6. Visit <a href="http://localhost:3000">http://localhost:3000</a> (or whatever port you specified) to view your site
 7. Alter the code, learn how it works, add new routes, & experiment! The server will automatically restart if you change any server-side files.
 
 ## Credits
