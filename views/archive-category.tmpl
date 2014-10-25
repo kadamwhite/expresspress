@@ -5,9 +5,11 @@
   <div class="row">
     <div class="col-md-8 col-md-push-4">
       <div class="row">
-        <h2>
-          Posts in &ldquo;{{category.name}}&rdquo;
-        </h2>
+        <div class="col-md-12">
+          <h2>
+            Posts in &ldquo;{{category.name}}&rdquo;
+          </h2>
+        </div>
       </div>
 
       <div class="row">
@@ -21,15 +23,7 @@
       <div class="row">
         {%endif%}
 
-        {%--
-        First four posts are full-width: following posts are 1/2 width.
-        All posts are 1/2 width when paging through past post archives.
-        --%}
-        {%if pages.current == 1 %}
-        <div class="post {%if idx < 4 %}col-sm-12{%else%}col-sm-6{%endif%}">
-        {%else%}
         <div class="post col-sm-6">
-        {%endif%}
           <h2>
             <a href="/{{post.date|get-year}}/{{post.date|get-month}}/{{post.slug}}">
               {{{post.title}}}
