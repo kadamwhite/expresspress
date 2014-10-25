@@ -73,6 +73,27 @@ function sortedCategoriesCached() {
 }
 
 /**
+ * Get a specific category (specified by slug) from the content cache
+ *
+ * The WP API doesn't currently support filtering taxonomy term collections,
+ * so we have to request all categories and filter them down if we want to get
+ * an individual term.
+ *
+ * To make this request more efficient, it uses sortedCategoriesCached.
+ *
+ * @method categoryCached
+ * @param {String} slug The slug of a category
+ * @return {Promise} A promise to the category with the provided slug
+ */
+function categoryCached( slug ) {
+  return sortedCategoriesCached().then(function( categories ) {
+    return _.findWhere( categories, {
+      slug: slug
+    });
+  });
+}
+
+/**
  * Get a specific tag (specified by slug) from the content cache
  *
  * The WP API doesn't currently support filtering taxonomy term collections,
@@ -133,6 +154,7 @@ module.exports = {
   siteInfo: siteInfo,
   sortedCategories: sortedCategories,
   sortedCategoriesCached: sortedCategoriesCached,
+  categoryCached: categoryCached,
   tagCached: tagCached,
   sortedTags: sortedTags,
   sortedTagsCached: sortedTagsCached,

@@ -16,7 +16,7 @@ router.get( '/page/:page', require( './index' ) );
 // router.use( '/:year/:month', require( './archive-year-month' ) );
 router.get( '/:year/:month/:slug', require( './single' ) );
 router.use( '/tags/:tag', require( './tag' ) );
-// router.use( '/categories/', require( './categories' ) );
+router.use( '/categories/:category', require( './category' ) );
 
 // catch 404 and forward to error handler
 router.use(function( req, res, next ) {
