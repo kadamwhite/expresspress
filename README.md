@@ -14,6 +14,7 @@ To run ExpressPress locally (which we recommend, as this is first and foremost a
 4. Create a file called "config.yml" within the repository directory, with the following content (see the <a href="https://github.com/WP-API/WP-API">WP-API project</a> for instructions on installing and enabling the API plugin):
 
       ```yml
+      # careful: yaml syntax requires spaces, NOT tabs!
       wordpress:
         endpoint: 'http://www.your-api-enabled-wp-site.com/wp-json'
         cacheLimit: 3600000 # 1000ms * 60s * 60m = 1hr
