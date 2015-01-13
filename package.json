@@ -8,6 +8,7 @@
     "postinstall": "grunt",
     "start": "nodemon ./bin/www",
     "debug": "nodemon --exec node-debug ./bin/www",
+    "lint": "grunt lint",
     "test": "grunt test"
   },
   "repository": {
