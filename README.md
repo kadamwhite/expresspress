@@ -1,5 +1,7 @@
 # ExpressPress
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/kadamwhite/expresspress?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This project is a demonstration of how <a href="http://wordpress.org">WordPress</a> can be used to provide content for an application written in <a href="http://nodejs.org">Node.js</a>, a server-side JavaScript runtime. WordPress is a mature and powerful content management system, with a longer history and better non-developer usability than many of the options available natively in Node. With the help of the <a href="http://github.com/WP-API/WP-API">WordPress REST API plugin</a> (which is targeted for integration with WordPress core some time in 2015), you can leverage the excellent content-editing interface and data store of WordPress from any Node app.
 
 ExpressPress itself is a lightweight blog viewer, which will serve the content from your WP-API-enabled WordPress site. It uses the <a href="https://www.npmjs.org/package/wordpress-rest-api">wordpress-rest-api</a> NPM module to query resources under the WP-API endpoint.
