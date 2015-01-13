@@ -2,7 +2,7 @@
 <div id="sidebar-categories">
 <h3>Categories</h3>
 <ul>
-  {%each categories as category %}
+  {%each categories|remove-empty-taxonomies as category %}
   <li>
     <a href="/categories/{{category.slug}}">
       {{{category.name}}}
@@ -17,7 +17,7 @@
 <div id="sidebar-tags">
 <h3>Tags</h3>
 <ul>
-  {%each tags as tag idx %}
+  {%each tags|remove-empty-taxonomies as tag idx %}
   {%-- Render out the first 30 tags... --%}
   <li>
     <a href="/tags/{{tag.slug}}">
